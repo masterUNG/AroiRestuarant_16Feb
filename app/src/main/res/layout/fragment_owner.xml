@@ -3,4 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--Toolbar-->
+    <include layout="@layout/toolbar_normal"
+        android:id="@+id/toolbarOwner"/>
+
+    <!--Content-->
+    <ListView
+        android:id="@+id/listViewOwner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </LinearLayout>
