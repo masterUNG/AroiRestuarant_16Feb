@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Aroi Restuarant</string>
+    <string name="title_authen">ระบบสมาชิก</string>
+    <string name="promotion">Promotion</string>
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
+
+    <string name="service">Please Order</string>
+    <string name="new_register">New Register</string>
+    <string name="name">Name :</string>
+    <string name="user">User :</string>
+    <string name="password">Password :</string>
+
+</resources>

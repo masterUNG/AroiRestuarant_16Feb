@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Content-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--Name food-->
+            <TextView
+                android:id="@+id/txtNamefood"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Name Food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <!--Image-->
+            <ImageView
+                android:id="@+id/imvFood"
+                android:layout_margin="@dimen/margin"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/icon" />
+
+            <!--Price-->
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:textSize="@dimen/h1"
+                android:text="Price = 123 THB."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--Detail-->
+            <TextView
+                android:id="@+id/txtDetail"
+                android:layout_margin="@dimen/margin"
+                android:textSize="@dimen/h2"
+                android:textColor="@color/colorPrimary"
+                android:text="detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>

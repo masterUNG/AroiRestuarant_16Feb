@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtNum"
+        android:textStyle="italic"
+        android:layout_weight="0.5"
+        android:text=" "
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtNamefood"
+        android:textSize="@dimen/h2"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_weight="3"
+        android:text="Name Food"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        android:textSize="@dimen/h2"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="Price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtItem"
+        android:textSize="@dimen/h2"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="Item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtSum"
+        android:textSize="@dimen/h2"
+        android:textStyle="italic"
+        android:gravity="center_horizontal"
+        android:layout_weight="1"
+        android:text="Sum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

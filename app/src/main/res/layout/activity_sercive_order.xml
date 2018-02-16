@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="janjira.jiraporn.yonlada.aroirestuarant.SerciveOrderActivity">
+
+    <!--Toolbar-->
+    <include
+        android:id="@+id/toolbarService"
+        layout="@layout/my_toolbar" />
+
+    <!--Content-->
+    <FrameLayout
+        android:id="@+id/contenfragmentService"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>
