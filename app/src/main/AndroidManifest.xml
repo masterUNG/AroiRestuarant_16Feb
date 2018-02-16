@@ -18,7 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SerciveOrderActivity"></activity>
+        <activity android:name=".SerciveOrderActivity" />
+        <activity android:name=".FirstActivity" />
+        <activity android:name=".OwnerActivity" />
+        <activity android:name=".ChefActivity" />
+        <activity android:name=".WaiterActivity" />
+        <activity android:name=".AdminActivity"></activity>
     </application>
 
 </manifest>
