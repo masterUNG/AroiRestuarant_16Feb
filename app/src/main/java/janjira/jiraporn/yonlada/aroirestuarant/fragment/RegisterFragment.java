@@ -3,6 +3,7 @@ package janjira.jiraporn.yonlada.aroirestuarant.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import janjira.jiraporn.yonlada.aroirestuarant.FirstActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.R;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.PostNewUser;
@@ -26,8 +28,27 @@ public class RegisterFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+//        Create Toolbar
+        createToolbar();
+
 //        Register Controller
         registerController();
+
+    }
+
+    private void createToolbar() {
+        Toolbar toolbar = getView().findViewById(R.id.toolbarRegister);
+        ((FirstActivity) getActivity()).setSupportActionBar(toolbar);
+        ((FirstActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.register));
+
+        ((FirstActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((FirstActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
 
     }
 

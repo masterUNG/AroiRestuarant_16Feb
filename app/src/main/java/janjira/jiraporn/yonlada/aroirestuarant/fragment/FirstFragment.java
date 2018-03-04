@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,9 +32,24 @@ public class FirstFragment extends Fragment{
 //        Login Controller
         loginController();
 
-
+//        Register Controller
+        registerController();
 
     }   // Main Method
+
+    private void registerController() {
+        TextView textView = getView().findViewById(R.id.txtRegister);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentFirstFragment, new RegisterFragment())
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
+    }
 
     private void loginController() {
         Button button = getView().findViewById(R.id.btnLogin);

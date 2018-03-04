@@ -5,27 +5,61 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:background="#b4ffffff"
         android:padding="@dimen/padding"
         android:layout_margin="@dimen/margin1"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"
+            android:layout_width="@dimen/icon"
+            android:layout_height="@dimen/icon" />
+
         <!--User-->
-        <EditText
-            android:id="@+id/edtUser"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="User"
-            android:inputType="text" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_action_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User"
+                android:inputType="text" />
+
+
+        </LinearLayout>
 
         <!--Password-->
-        <EditText
-            android:id="@+id/edtPassword"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+
+        </LinearLayout>
 
         <!--Login Button-->
         <Button
@@ -41,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:clickable="true"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/h2"
             android:textStyle="bold" />
