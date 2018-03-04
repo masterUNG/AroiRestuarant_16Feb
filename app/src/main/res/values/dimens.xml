@@ -2,7 +2,9 @@
 <resources>
     <dimen name="icon">150dp</dimen>
     <dimen name="h1">24sp</dimen>
-    <dimen name="padding">16dp</dimen>
     <dimen name="h2">18sp</dimen>
     <dimen name="margin">40dp</dimen>
+    <dimen name="image">200dp</dimen>
+    <dimen name="margin1">50dp</dimen>
+    <dimen name="padding">16dp</dimen>
 </resources>

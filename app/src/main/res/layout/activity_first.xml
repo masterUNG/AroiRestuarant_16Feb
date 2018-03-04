@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="janjira.jiraporn.yonlada.aroirestuarant.FirstActivity">
 
+
+    <FrameLayout
+        android:id="@+id/contentFirstFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
 </android.support.constraint.ConstraintLayout>
