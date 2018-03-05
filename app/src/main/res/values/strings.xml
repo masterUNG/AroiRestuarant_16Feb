@@ -12,4 +12,19 @@
     <string name="password">Password :</string>
     <string name="register">Register</string>
 
+    <string name="menu1">ระบบโปรโมชั่น</string>
+    <string name="menu2">ระบบรายละเอียดโปรโมชั่น</string>
+    <string name="menu3">ระบบราคาสินค้าทั้วไป และ สมาชิก</string>
+    <string name="menu4">ระบบรายละเอียดราคาสินค้า</string>
+    <string name="menu5">ระบบสั่งอาหาร</string>
+    <string name="menu6">ระบบลบรายการ</string>
+    <string name="menu7">ระบบเพิ่มรายการ</string>
+    <string name="menu8">ระบบแก้ไขรายการ</string>
+    <string name="menu9">ระบบสถานะการทำอาหารพ่อครัว</string>
+    <string name="menu10">ระบบบิลชำระเงิน</string>
+    <string name="menu11">ระบบจองโต้ะลูกค้า</string>
+    <string name="menu12">ระบบยืนยันช่วงเวลาการจองโต้ะ</string>
+    <string name="menu13">ระบบรีวิวคอมเมนต์ คะแนนหัวใจ</string>
+
+
 </resources>

@@ -1,5 +1,8 @@
 package janjira.jiraporn.yonlada.aroirestuarant.fragment;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,7 +18,13 @@ import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
+import janjira.jiraporn.yonlada.aroirestuarant.AdminActivity;
+import janjira.jiraporn.yonlada.aroirestuarant.ChefActivity;
+import janjira.jiraporn.yonlada.aroirestuarant.OwnerActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.R;
+import janjira.jiraporn.yonlada.aroirestuarant.WaiterActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.LoadAllJSON;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 
@@ -23,7 +32,7 @@ import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
  * Created by masterung on 16/2/2018 AD.
  */
 
-public class FirstFragment extends Fragment{
+public class FirstFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -92,7 +101,7 @@ public class FirstFragment extends Fragment{
                             if (userString.equals(jsonObject.getString("User"))) {
 
                                 userBoolean = false;
-                                for (int i1=0; i1<loginStrings.length; i1+=1) {
+                                for (int i1 = 0; i1 < loginStrings.length; i1 += 1) {
                                     loginStrings[i1] = jsonObject.getString(columnStrings[i1]);
                                 }   // for
 
@@ -106,9 +115,36 @@ public class FirstFragment extends Fragment{
                             myAlert("Password False");
                         } else {
                             myAlert("Welcome " + loginStrings[1]);
-                            
-                        }
+                            String loginArrayListString = makeArrayList(loginStrings);
+                            Log.d("5MarchV1", "loginArrayListString ==> " + loginArrayListString);
 
+                            saveLoginOnPreferences(loginArrayListString);
+
+                            switch (Integer.parseInt(loginStrings[4])) {
+                                case 0:
+                                    Intent intent = new Intent(getActivity(), OwnerActivity.class);
+                                    startActivity(intent);
+                                    getActivity().finish();
+                                    break;
+                                case 1:
+                                    Intent intent1 = new Intent(getActivity(), ChefActivity.class);
+                                    startActivity(intent1);
+                                    getActivity().finish();
+                                    break;
+                                case 2:
+                                    Intent intent2 = new Intent(getActivity(), WaiterActivity.class);
+                                    startActivity(intent2);
+                                    getActivity().finish();
+                                    break;
+                                case 3:
+                                    Intent intent3 = new Intent(getActivity(), AdminActivity.class);
+                                    startActivity(intent3);
+                                    getActivity().finish();
+                                    break;
+                            }
+
+
+                        }   // if
 
 
                     } catch (Exception e) {
@@ -118,10 +154,31 @@ public class FirstFragment extends Fragment{
                 }   // if
 
 
-
-
             }   // onClick
         });
+    }
+
+    private void saveLoginOnPreferences(String loginArrayListString) {
+
+        SharedPreferences sharedPreferences = getActivity()
+                .getSharedPreferences("Login", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("LoginArray", loginArrayListString);
+        editor.commit();
+
+    }
+
+    private String makeArrayList(String[] loginStrings) {
+
+        String resultString = null;
+        ArrayList<String> stringArrayList = new ArrayList<>();
+
+        for (int i = 0; i < loginStrings.length; i += 1) {
+            stringArrayList.add(loginStrings[i]);
+        }
+
+        resultString = stringArrayList.toString();
+        return resultString;
     }
 
     private void myAlert(String messageString) {
