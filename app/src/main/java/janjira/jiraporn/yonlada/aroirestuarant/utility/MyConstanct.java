@@ -12,7 +12,6 @@ public class MyConstanct {
     private String urlGetAllUserString = "http://androidthai.in.th/mua/getAllUser.php";
 
 
-
     //    Array
     private String[] columnFood = new String[]{
             "id",
