@@ -4,53 +4,62 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include
+        android:id="@+id/toolbarListOrder"
+        layout="@layout/my_toolbar" />
+
     <!--Head-->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text=" "
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:text=" " />
 
         <TextView
-            android:textSize="@dimen/h2"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="3"
+            android:gravity="center_horizontal"
             android:text="Name Food"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
         <TextView
-            android:textSize="@dimen/h2"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:text="Price"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
         <TextView
-            android:textSize="@dimen/h2"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:text="Item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
         <TextView
-            android:textSize="@dimen/h2"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:layout_weight="1"
-            android:text="Sum"
             android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="Sum"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -59,6 +68,6 @@
     <ListView
         android:id="@+id/listViewOrder"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -7,9 +7,9 @@
     tools:context="janjira.jiraporn.yonlada.aroirestuarant.SerciveOrderActivity">
 
     <!--Toolbar-->
-    <include
-        android:id="@+id/toolbarService"
-        layout="@layout/my_toolbar" />
+    <!--<include-->
+        <!--android:id="@+id/toolbarService"-->
+        <!--layout="@layout/my_toolbar" />-->
 
     <!--Content-->
     <FrameLayout

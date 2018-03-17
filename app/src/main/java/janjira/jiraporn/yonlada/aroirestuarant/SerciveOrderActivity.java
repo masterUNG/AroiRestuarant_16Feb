@@ -30,7 +30,7 @@ public class SerciveOrderActivity extends AppCompatActivity {
         getValueFromeIntent();
 
 //        Create Toolbar
-        createToolbar();
+        //createToolbar();
 
 //        Add Fragment
         addFragment(savedInstanceState);
@@ -56,24 +56,6 @@ public class SerciveOrderActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_service, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (item.getItemId() == R.id.itemMenuOrder) {
-
-            chooseItemOrder();
-
-        }
-
-
-        return super.onOptionsItemSelected(item);
-    }
 
     private void chooseItemOrder() {
 
@@ -112,22 +94,7 @@ public class SerciveOrderActivity extends AppCompatActivity {
 
     }
 
-    private void createToolbar() {
 
-        Toolbar toolbar = findViewById(R.id.toolbarService);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getString(R.string.service));
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-    }
 
 }   // Main Class
 
