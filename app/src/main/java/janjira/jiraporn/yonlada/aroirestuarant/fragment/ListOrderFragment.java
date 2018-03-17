@@ -2,6 +2,7 @@ package janjira.jiraporn.yonlada.aroirestuarant.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import janjira.jiraporn.yonlada.aroirestuarant.MainActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.R;
 import janjira.jiraporn.yonlada.aroirestuarant.SerciveOrderActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyOpenHelper;
@@ -50,7 +52,10 @@ public class ListOrderFragment extends Fragment{
         }
 
         if (item.getItemId() == R.id.item_confirm_order) {
-
+            Intent intent = new Intent(getActivity(), MainActivity.class);
+            intent.putExtra("Status", true);
+            startActivity(intent);
+            getActivity().finish();
             return true;
         }
 

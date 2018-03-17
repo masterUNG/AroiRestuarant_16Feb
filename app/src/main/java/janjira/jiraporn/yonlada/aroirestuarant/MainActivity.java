@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             streamTextView, candyTextView, fruidTextView, drinkTextView;
     private int indexAnInt = 0;
 
-    private boolean aBoolean = true;
+    private boolean aBoolean = false;
 
 
     @Override
@@ -44,6 +44,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewController();
 
     } //Main Method
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        aBoolean = getIntent().getBooleanExtra("Status", false);
+        if (aBoolean) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contentFragmentMain, new StatusOrderFragment())
+                    .commit();
+        }
+
+
+    }
 
     private void textViewController() {
 
@@ -93,15 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void addFragement(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
 
-            if (aBoolean) {
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt))
-                        .commit();
-            } else {
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.contentFragmentMain, new StatusOrderFragment())
-                        .commit();
-            }
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt))
+                    .commit();
 
         }
     }

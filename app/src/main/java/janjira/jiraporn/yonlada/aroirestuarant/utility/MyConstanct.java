@@ -7,12 +7,17 @@ package janjira.jiraporn.yonlada.aroirestuarant.utility;
 public class MyConstanct {
 
     //    URL
+    private String urlAddOrder = "http://androidthai.in.th/mua/addOrder.php";
     private String urlPromotionString = "http://androidthai.in.th/mua/getAllData.php";
     private String urlAddUserString = "http://androidthai.in.th/mua/addDataMaster.php";
     private String urlGetAllUserString = "http://androidthai.in.th/mua/getAllUser.php";
 
 
     //    Array
+
+    private String[] columnOrder = new String[]{"id", "orderDate",
+            "orderID", "orNameFood", "Item", "Status"};
+
     private String[] columnFood = new String[]{
             "id",
             "Category",
@@ -36,6 +41,14 @@ public class MyConstanct {
 
     //    Method
 
+
+    public String[] getColumnOrder() {
+        return columnOrder;
+    }
+
+    public String getUrlAddOrder() {
+        return urlAddOrder;
+    }
 
     public String getUrlGetAllUserString() {
         return urlGetAllUserString;
