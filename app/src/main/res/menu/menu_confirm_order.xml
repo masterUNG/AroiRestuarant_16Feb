@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        app:showAsAction="always"
+        android:id="@+id/item_add_order"
+        android:icon="@drawable/ic_action_add"
+        android:title="Confirm Order" />
+
+    <item
+        app:showAsAction="always"
+        android:id="@+id/item_confirm_order"
+        android:icon="@drawable/ic_action_confirm_order"
+        android:title="Confirm Order" />
+
+</menu>

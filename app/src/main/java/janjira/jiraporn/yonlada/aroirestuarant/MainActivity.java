@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import janjira.jiraporn.yonlada.aroirestuarant.fragment.MainFragment;
+import janjira.jiraporn.yonlada.aroirestuarant.fragment.StatusOrderFragment;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             burnTextView, setFoodTextView, nudleTextView, chiliTextView,
             streamTextView, candyTextView, fruidTextView, drinkTextView;
     private int indexAnInt = 0;
+
+    private boolean aBoolean = true;
 
 
     @Override
@@ -89,9 +92,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void addFragement(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt))
-                    .commit();
+
+            if (aBoolean) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt))
+                        .commit();
+            } else {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.contentFragmentMain, new StatusOrderFragment())
+                        .commit();
+            }
+
         }
     }
 
