@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Content-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/toolbarAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        <FrameLayout
+            android:id="@+id/contentUserFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+    <!--Drawer-->
+    <LinearLayout
+        android:padding="@dimen/padding"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <!--Home of Promote-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_promote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtHome"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--อาหารจานด่วน-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_single_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtSingleFood"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--แกง-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_soup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtSoup"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--ปิ้ง/ย่าง/ทอด-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_burn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtburn"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--อาหารชุด-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_set_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtSetFood"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--เส้น-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_nudle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtNudle"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--นำ้พริก-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_chili"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtChili"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--นึ่ง-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_stream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtsteam"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--อาหารว่าง/ขนม-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_candy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtCandy"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--ผลไม้-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_fruit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtFruit"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <!--เครื่องดื่ม-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Icon-->
+            <ImageView
+                android:src="@drawable/ic_action_drink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!--TextField-->
+            <TextView
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/h2"
+                android:id="@+id/txtDrink"
+                android:text="Test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,5 +1,7 @@
 package janjira.jiraporn.yonlada.aroirestuarant;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -15,7 +17,10 @@ import android.widget.TextView;
 import janjira.jiraporn.yonlada.aroirestuarant.fragment.MainFragment;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private String loginArrayString;
+    private String[] loginStrings;
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -25,22 +30,67 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             streamTextView, candyTextView, fruidTextView, drinkTextView;
     private int indexAnInt = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_user);
 
-//       Add Fragment to Activity
+//        GetValue From SharedPreference
+        getVauleFromSharedPreferance();
+
         addFragement(savedInstanceState);
 
-//        Cteate Toolbar
-        cteateToolbar();
+//        Creage Toolbar
+        creageToolbar();
 
-//        TextView Controller
         textViewController();
 
-    } //Main Method
+    }   // Main Method
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        actionBarDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        actionBarDrawerToggle.syncState();
+    }
+
+    private void creageToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbarAdmin);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(loginStrings[1]);
+        getSupportActionBar().setSubtitle("Owner");
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        drawerLayout = findViewById(R.id.drawerLayout);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(UserActivity.this,
+                drawerLayout, R.string.open, R.string.close);
+
+    }
+
+    private void addFragement(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentUserFragment, MainFragment.mainInstance(indexAnInt))
+                    .commit();
+        }
+    }
 
     private void textViewController() {
 
@@ -73,60 +123,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drinkTextView.setText(categoryStrings[10]);
 
 //        Listener
-        homeTextView.setOnClickListener(MainActivity.this);
-        singleFoodTextView.setOnClickListener(MainActivity.this);
-        sopeTextView.setOnClickListener(MainActivity.this);
-        burnTextView.setOnClickListener(MainActivity.this);
-        setFoodTextView.setOnClickListener(MainActivity.this);
-        nudleTextView.setOnClickListener(MainActivity.this);
-        chiliTextView.setOnClickListener(MainActivity.this);
-        streamTextView.setOnClickListener(MainActivity.this);
-        candyTextView.setOnClickListener(MainActivity.this);
-        fruidTextView.setOnClickListener(MainActivity.this);
-        drinkTextView.setOnClickListener(MainActivity.this);
+        homeTextView.setOnClickListener(UserActivity.this);
+        singleFoodTextView.setOnClickListener(UserActivity.this);
+        sopeTextView.setOnClickListener(UserActivity.this);
+        burnTextView.setOnClickListener(UserActivity.this);
+        setFoodTextView.setOnClickListener(UserActivity.this);
+        nudleTextView.setOnClickListener(UserActivity.this);
+        chiliTextView.setOnClickListener(UserActivity.this);
+        streamTextView.setOnClickListener(UserActivity.this);
+        candyTextView.setOnClickListener(UserActivity.this);
+        fruidTextView.setOnClickListener(UserActivity.this);
+        drinkTextView.setOnClickListener(UserActivity.this);
 
-    }   // Main Method
+    }
 
-    private void addFragement(Bundle savedInstanceState) {
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt))
-                    .commit();
+    private void getVauleFromSharedPreferance() {
+        SharedPreferences sharedPreferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        loginArrayString = sharedPreferences.getString("LoginArray", "None");
+        Log.d("5MarchV1", "LoginArray ที่รับค่ามา ==> " + loginArrayString);
+
+        loginArrayString = loginArrayString.replace("[", "");
+        loginArrayString = loginArrayString.replace("]", "");
+        Log.d("5MarchV1", "LoginArray ที่ replace ค่ามา ==> " + loginArrayString);
+
+        loginStrings = loginArrayString.split(",");
+        for (int i=0; i<loginStrings.length; i+=1) {
+            Log.d("5MarchV1", "loginStrings[" + i + "] ==> " + loginStrings[i]);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        actionBarDrawerToggle.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        actionBarDrawerToggle.syncState();
-    }
-
-    private void cteateToolbar() {
-        toolbar = findViewById(R.id.toolbarMain);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        drawerLayout = findViewById(R.id.drawerLayout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity.this,
-                drawerLayout, R.string.open, R.string.close);
 
     }
 
@@ -170,8 +193,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.contentFragmentMain, MainFragment.mainInstance(indexAnInt)).commit();
+                .replace(R.id.contentUserFragment, MainFragment.mainInstance(indexAnInt)).commit();
         Log.d("30novV1", "You Choose index ==> " + indexAnInt);
         drawerLayout.closeDrawers();
     }
-} // Main Class
+}

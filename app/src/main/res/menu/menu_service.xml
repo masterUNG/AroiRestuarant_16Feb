@@ -8,10 +8,7 @@
         android:title="Order"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/itemMenuNewRegister"
-        android:icon="@drawable/ic_action_register"
-        android:title="@string/new_register"
-        app:showAsAction="always"/>
+
 
 
 </menu>

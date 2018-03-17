@@ -22,8 +22,10 @@ import java.util.ArrayList;
 
 import janjira.jiraporn.yonlada.aroirestuarant.AdminActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.ChefActivity;
+import janjira.jiraporn.yonlada.aroirestuarant.MainActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.OwnerActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.R;
+import janjira.jiraporn.yonlada.aroirestuarant.UserActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.WaiterActivity;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.LoadAllJSON;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
@@ -137,7 +139,7 @@ public class FirstFragment extends Fragment {
                                     getActivity().finish();
                                     break;
                                 case 3:
-                                    Intent intent3 = new Intent(getActivity(), AdminActivity.class);
+                                    Intent intent3 = new Intent(getActivity(), MainActivity.class);
                                     startActivity(intent3);
                                     getActivity().finish();
                                     break;

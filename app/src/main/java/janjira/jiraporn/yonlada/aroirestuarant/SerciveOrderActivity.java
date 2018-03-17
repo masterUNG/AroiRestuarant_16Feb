@@ -71,12 +71,6 @@ public class SerciveOrderActivity extends AppCompatActivity {
 
         }
 
-        if (item.getItemId() == R.id.itemMenuNewRegister) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.contenfragmentService, new RegisterFragment())
-                    .addToBackStack(null)
-                    .commit();
-        }
 
         return super.onOptionsItemSelected(item);
     }

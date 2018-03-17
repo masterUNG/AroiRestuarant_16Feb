@@ -23,7 +23,8 @@
         <activity android:name=".OwnerActivity" />
         <activity android:name=".ChefActivity" />
         <activity android:name=".WaiterActivity" />
-        <activity android:name=".AdminActivity"></activity>
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>
