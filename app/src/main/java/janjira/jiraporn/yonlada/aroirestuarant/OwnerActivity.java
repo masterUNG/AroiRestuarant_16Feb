@@ -14,6 +14,7 @@ public class OwnerActivity extends AppCompatActivity {
     private String loginArrayString;
     private String[] loginStrings;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
