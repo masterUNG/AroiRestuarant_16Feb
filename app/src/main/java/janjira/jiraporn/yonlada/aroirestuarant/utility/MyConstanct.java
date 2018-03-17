@@ -15,8 +15,13 @@ public class MyConstanct {
 
     //    Array
 
-    private String[] columnOrder = new String[]{"id", "orderDate",
-            "orderID", "orNameFood", "Item", "Status"};
+    private String[] columnOrder = new String[]{
+            "id",
+            "orderDate",
+            "orderID",
+            "orNameFood",
+            "Item",
+            "Status"};
 
     private String[] columnFood = new String[]{
             "id",
