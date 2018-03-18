@@ -34,13 +34,13 @@ public class AddOrder extends AsyncTask<String, Void, String>{
             RequestBody requestBody = new FormEncodingBuilder()
                     .add("isAdd", "true")
                     .add(columnStrings1[1], strings[0])
-                    .add(columnStrings1[2], strings[2])
-                    .add(columnStrings1[3], strings[3])
-                    .add(columnStrings1[4], strings[4])
-                    .add(columnStrings1[5], strings[5])
+                    .add(columnStrings1[2], strings[1])
+                    .add(columnStrings1[3], strings[2])
+                    .add(columnStrings1[4], strings[3])
+                    .add(columnStrings1[5], strings[4])
                     .build();
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[6]).post(requestBody).build();
+            Request request = builder.url(strings[5]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
             return response.body().string();
 
