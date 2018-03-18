@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -37,7 +38,34 @@ public class StatusOrderFragment extends Fragment {
 //        Read All SQlite and Delete
         readAllSQLiteAndDelete();
 
+//        Create ListView
+        createListView();
+
+
     }   // Main Method
+
+    private void createListView() {
+
+        ListView listView = getView().findViewById(R.id.listViewOrder);
+        MyConstanct myConstanct = new MyConstanct();
+
+        Calendar calendar = Calendar.getInstance();
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-YYYY");
+        String dateString = dateFormat.format(calendar.getTime());
+
+
+
+        try {
+
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
     private void readAllSQLiteAndDelete() {
         try {
