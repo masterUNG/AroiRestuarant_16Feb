@@ -50,7 +50,7 @@ public class StatusOrderFragment extends Fragment {
         MyConstanct myConstanct = new MyConstanct();
 
         Calendar calendar = Calendar.getInstance();
-        DateFormat dateFormat = new SimpleDateFormat("dd-MM-YYYY");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         String dateString = dateFormat.format(calendar.getTime());
 
 
