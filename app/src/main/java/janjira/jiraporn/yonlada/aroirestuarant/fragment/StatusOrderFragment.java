@@ -13,14 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import janjira.jiraporn.yonlada.aroirestuarant.R;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.AddOrder;
+import janjira.jiraporn.yonlada.aroirestuarant.utility.GetOrderWhereDateAnOrderID;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyOpenHelper;
+import janjira.jiraporn.yonlada.aroirestuarant.utility.OrderAdapter;
+import janjira.jiraporn.yonlada.aroirestuarant.utility.StatusAdapter;
 
 /**
  * Created by masterung on 17/3/2018 AD.
@@ -29,6 +35,7 @@ import janjira.jiraporn.yonlada.aroirestuarant.utility.MyOpenHelper;
 public class StatusOrderFragment extends Fragment {
 
     private String[] loginStrings;
+    private String dateString, orderIDString;
 
 
     @Override
@@ -51,14 +58,40 @@ public class StatusOrderFragment extends Fragment {
 
         Calendar calendar = Calendar.getInstance();
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        String dateString = dateFormat.format(calendar.getTime());
+        dateString = dateFormat.format(calendar.getTime());
 
+        orderIDString = "User-" + loginStrings[0];
 
+        Log.d("19MarchV1", "orderID ==> " + orderIDString);
+        Log.d("19MarchV1", "Date ==> " + dateString);
 
         try {
 
+            GetOrderWhereDateAnOrderID getOrderWhereDateAnOrderID = new GetOrderWhereDateAnOrderID(getActivity());
+            getOrderWhereDateAnOrderID.execute(dateString, orderIDString, myConstanct.getUrlGetOrderWhereDateAnOrderID());
 
+            String jsonString = getOrderWhereDateAnOrderID.get();
+            Log.d("19MarchV1", "JSoN ==> " + jsonString);
 
+            JSONArray jsonArray = new JSONArray(jsonString);
+
+            String[] nameFoodStrings = new String[jsonArray.length()];
+            String[] itemStrings = new String[jsonArray.length()];
+            String[] statusStrings = new String[jsonArray.length()];
+            String[] priceStrings = new String[jsonArray.length()];
+
+            for (int i = 0; i < jsonArray.length(); i += 1) {
+
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                nameFoodStrings[i] = jsonObject.getString("orNameFood");
+                itemStrings[i] = jsonObject.getString("Item");
+                statusStrings[i] = jsonObject.getString("Status");
+                priceStrings[i] = "";
+            }
+
+            StatusAdapter statusAdapter = new StatusAdapter(getActivity(), nameFoodStrings, itemStrings, statusStrings);
+            listView.setAdapter(statusAdapter);
 
 
         } catch (Exception e) {
@@ -96,7 +129,7 @@ public class StatusOrderFragment extends Fragment {
 
             String[] valueStrings = new String[6];
 
-            for (int i=0; i<cursor.getCount(); i+=1) {
+            for (int i = 0; i < cursor.getCount(); i += 1) {
 
                 valueStrings[0] = dateString;
                 valueStrings[1] = "User-" + loginStrings[0];

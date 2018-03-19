@@ -21,7 +21,10 @@ public class OrderAdapter extends BaseAdapter {
             itemTextView, sumTextView;
     private int anInt = 0;
 
-    public OrderAdapter(Context context, String[] nameFoodStrings, String[] priceStrings, String[] itemStrings) {
+    public OrderAdapter(Context context,
+                        String[] nameFoodStrings,
+                        String[] priceStrings,
+                        String[] itemStrings) {
         this.context = context;
         this.nameFoodStrings = nameFoodStrings;
         this.priceStrings = priceStrings;
