@@ -43,7 +43,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        TextView Controller
         textViewController();
 
+//        Status Controller
+        statusController();
+
+
     } //Main Method
+
+    private void statusController() {
+        TextView textView = findViewById(R.id.txtStatus);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentMain, new StatusOrderFragment())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+    }
 
     @Override
     protected void onResume() {
@@ -186,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.txtDrink:
                 indexAnInt = 10;
                 break;
+
         }
 
         getSupportFragmentManager().beginTransaction()
