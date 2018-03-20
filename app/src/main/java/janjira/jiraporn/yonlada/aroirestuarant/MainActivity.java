@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import janjira.jiraporn.yonlada.aroirestuarant.fragment.MainFragment;
 import janjira.jiraporn.yonlada.aroirestuarant.fragment.StatusOrderFragment;
+import janjira.jiraporn.yonlada.aroirestuarant.fragment.TableFragment;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -46,8 +47,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        Status Controller
         statusController();
 
+//        Choose Table
+        chooseTable();
+
 
     } //Main Method
+
+    private void chooseTable() {
+        TextView textView = findViewById(R.id.txtChooseTable);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.contentFragmentMain, new TableFragment())
+                        .commit();
+                drawerLayout.closeDrawers();
+            }
+
+        });
+    }
 
     private void statusController() {
         TextView textView = findViewById(R.id.txtStatus);

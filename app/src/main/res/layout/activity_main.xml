@@ -350,6 +350,33 @@
 
                 </LinearLayout>
 
+                <!--Choose Table-->
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--Icon-->
+                    <ImageView
+                        android:src="@drawable/ic_action_chili"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <!--TextField-->
+                    <TextView
+                        android:layout_marginLeft="@dimen/padding"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="@dimen/h2"
+                        android:id="@+id/txtChooseTable"
+                        android:text="Choose Table"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+
+
             </LinearLayout>
 
         </ScrollView>

@@ -76,6 +76,7 @@ public class CheckBillFragment extends Fragment {
             String[] nameFoodStrings = new String[jsonArray.length()];
             String[] itemStrings = new String[jsonArray.length()];
             String[] priceStrings = new String[jsonArray.length()];
+            int totalAInt = 0;
 
             for (int i=0; i<jsonArray.length(); i+=1) {
 
@@ -85,12 +86,20 @@ public class CheckBillFragment extends Fragment {
                 itemStrings[i] = jsonObject.getString("Item");
                 priceStrings[i] = findPrice(nameFoodStrings[i]);
 
+                int itemAInt = Integer.parseInt(itemStrings[i]);
+                int priceAInt = Integer.parseInt(priceStrings[i]);
+
+                totalAInt = totalAInt + (itemAInt * priceAInt);
+
             }
 
             OrderAdapter orderAdapter = new OrderAdapter(getActivity(), nameFoodStrings,
                     priceStrings, itemStrings);
 
             listView.setAdapter(orderAdapter);
+
+            TextView textView = getView().findViewById(R.id.txtTotal);
+            textView.setText(Integer.toString(totalAInt) + " THB");
 
         } catch (Exception e) {
             e.printStackTrace();
