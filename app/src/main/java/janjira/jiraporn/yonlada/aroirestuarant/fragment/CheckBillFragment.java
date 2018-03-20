@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.Random;
 
 import janjira.jiraporn.yonlada.aroirestuarant.R;
+import janjira.jiraporn.yonlada.aroirestuarant.utility.GetFoodWhereName;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.GetOrderWhereDateAnOrderID;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.MyConstanct;
 import janjira.jiraporn.yonlada.aroirestuarant.utility.OrderAdapter;
@@ -82,7 +83,7 @@ public class CheckBillFragment extends Fragment {
 
                 nameFoodStrings[i] = jsonObject.getString("orNameFood");
                 itemStrings[i] = jsonObject.getString("Item");
-                priceStrings[i] = "1";
+                priceStrings[i] = findPrice(nameFoodStrings[i]);
 
             }
 
@@ -93,6 +94,29 @@ public class CheckBillFragment extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+
+    }
+
+    private String findPrice(String nameFoodString) {
+
+        try {
+
+            MyConstanct myConstanct = new MyConstanct();
+            GetFoodWhereName getFoodWhereName = new GetFoodWhereName(getActivity());
+            getFoodWhereName.execute(nameFoodString, myConstanct.getUrlGetFoodWhereName());
+
+            String jsonString = getFoodWhereName.get();
+            Log.d("21MarchV1", "JSON ==> " + jsonString);
+
+            JSONArray jsonArray = new JSONArray(jsonString);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            return jsonObject.getString("Price");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "1";
         }
 
 
