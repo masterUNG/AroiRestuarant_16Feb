@@ -26,5 +26,9 @@
     <string name="menu12">ระบบยืนยันช่วงเวลาการจองโต้ะ</string>
     <string name="menu13">ระบบรีวิวคอมเมนต์ คะแนนหัวใจ</string>
 
+    <string name="place">สถานที่</string>
+    <string name="food">รสชาดอาหาร</string>
+    <string name="service1">บริการ</string>
+
 
 </resources>

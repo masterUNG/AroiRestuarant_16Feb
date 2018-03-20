@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -48,8 +49,23 @@ public class StatusOrderFragment extends Fragment {
 //        Create ListView
         createListView();
 
+//        CheckBill Controller
+        checkBillController();
 
     }   // Main Method
+
+    private void checkBillController() {
+        Button button = getActivity().findViewById(R.id.btnCheckBill);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentFragmentMain, new ScoreAnCommentFragment())
+                        .commit();
+            }
+        });
+    }
 
     private void createListView() {
 
