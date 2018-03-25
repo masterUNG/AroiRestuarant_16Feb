@@ -1,6 +1,7 @@
 package janjira.jiraporn.yonlada.aroirestuarant.utility;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,12 @@ public class ChefAdapter extends BaseAdapter {
         tableTextView.setText(tableStrings[position]);
         itemTextView.setText(itemStrings[position]);
         statusTextView.setText(strings[Integer.parseInt(statusStrings[position])]);
+
+        if (Integer.parseInt(statusStrings[position]) == 0) {
+            statusTextView.setTextColor(Color.RED);
+        } else {
+            statusTextView.setTextColor(Color.GREEN);
+        }
 
 
 

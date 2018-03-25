@@ -61,7 +61,7 @@ public class ChefFragment extends Fragment {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 idStrings[i] = jsonObject.getString(columnStrings[0]);
                 nameFoodStrings[i] = jsonObject.getString(columnStrings[3]);
-                tableStrings[i] = "User-8";
+                tableStrings[i] = jsonObject.getString(columnStrings[2]);
                 itemeStrings[i] = jsonObject.getString(columnStrings[4]);
                 statusStrings[i] = jsonObject.getString(columnStrings[5]);
             }
