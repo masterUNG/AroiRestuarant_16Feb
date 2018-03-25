@@ -7,6 +7,7 @@ package janjira.jiraporn.yonlada.aroirestuarant.utility;
 public class MyConstanct {
 
     //    URL
+    private String urlGetOrderWhereDate = "http://androidthai.in.th/mua/getOrderWhereDate.php";
     private String urlEditTable = "http://androidthai.in.th/mua/editTable.php";
     private String urlGetFoodWhereName = "http://androidthai.in.th/mua/getFoodWhereName.php";
     private String urlGetOrderWhereDateAnOrderID = "http://androidthai.in.th/mua/getOrderWhereDateAnOrderID.php";
@@ -49,6 +50,10 @@ public class MyConstanct {
 
     //    Method
 
+
+    public String getUrlGetOrderWhereDate() {
+        return urlGetOrderWhereDate;
+    }
 
     public String getUrlEditTable() {
         return urlEditTable;

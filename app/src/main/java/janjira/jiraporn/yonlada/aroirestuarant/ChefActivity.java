@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import janjira.jiraporn.yonlada.aroirestuarant.fragment.ChefFragment;
+
 public class ChefActivity extends AppCompatActivity {
 
     private String loginArrayString;
@@ -25,6 +27,12 @@ public class ChefActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(loginStrings[1]);
         getSupportActionBar().setSubtitle("Owner");
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.contentCheffFrament, new ChefFragment())
+                    .commit();
+        }
 
     }
 
