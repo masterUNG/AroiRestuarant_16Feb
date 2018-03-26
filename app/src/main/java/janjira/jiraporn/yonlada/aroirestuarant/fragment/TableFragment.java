@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,17 +29,15 @@ public class TableFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 
 //        Initial View
-        imageView1 = getView().findViewById(R.id.imvTable1);
-        imageView2 = getView().findViewById(R.id.imvTable2);
-        imageView3 = getView().findViewById(R.id.imvTable3);
-        imageView4 = getView().findViewById(R.id.imvTable4);
-        imageView5 = getView().findViewById(R.id.imvTable5);
-        imageView6 = getView().findViewById(R.id.imvTable6);
-        imageView7 = getView().findViewById(R.id.imvTable7);
-        imageView8 = getView().findViewById(R.id.imvTable8);
-        imageView9 = getView().findViewById(R.id.imvTable9);
+        initialView();
 
 //        Image Controller
+        imageController();
+
+
+    }   // Main Method
+
+    private void imageController() {
         imageView1.setOnClickListener(this);
         imageView2.setOnClickListener(this);
         imageView3.setOnClickListener(this);
@@ -48,8 +47,18 @@ public class TableFragment extends Fragment implements View.OnClickListener {
         imageView7.setOnClickListener(this);
         imageView8.setOnClickListener(this);
         imageView9.setOnClickListener(this);
+    }
 
-
+    private void initialView() {
+        imageView1 = getView().findViewById(R.id.imvTable1);
+        imageView2 = getView().findViewById(R.id.imvTable2);
+        imageView3 = getView().findViewById(R.id.imvTable3);
+        imageView4 = getView().findViewById(R.id.imvTable4);
+        imageView5 = getView().findViewById(R.id.imvTable5);
+        imageView6 = getView().findViewById(R.id.imvTable6);
+        imageView7 = getView().findViewById(R.id.imvTable7);
+        imageView8 = getView().findViewById(R.id.imvTable8);
+        imageView9 = getView().findViewById(R.id.imvTable9);
     }
 
     @Nullable
@@ -61,6 +70,8 @@ public class TableFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
+        Log.d("27MarchV1", "statusABoolean ==> " + statusABoolean);
 
         if (v == imageView1) {
             if (statusBooleans[0] && statusABoolean) {
@@ -84,27 +95,27 @@ public class TableFragment extends Fragment implements View.OnClickListener {
         }
         if (v == imageView5) {
             if (statusBooleans[4] && statusABoolean) {
-                comfireTable("Table1", imageView5);
+                comfireTable("Table2", imageView5);
             }
         }
         if (v == imageView6) {
             if (statusBooleans[5] && statusABoolean) {
-                comfireTable("Table1", imageView6);
+                comfireTable("Table3", imageView6);
             }
         }
         if (v == imageView7) {
             if (statusBooleans[6] && statusABoolean) {
-                comfireTable("Table1", imageView7);
+                comfireTable("Table4", imageView7);
             }
         }
         if (v == imageView8) {
             if (statusBooleans[7] && statusABoolean) {
-                comfireTable("Table1", imageView8);
+                comfireTable("Table5", imageView8);
             }
         }
         if (v == imageView9) {
             if (statusBooleans[8] && statusABoolean) {
-                comfireTable("Table1", imageView9);
+                comfireTable("Table6", imageView9);
             }
         }
 
